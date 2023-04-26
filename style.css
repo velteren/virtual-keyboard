@@ -1,0 +1,126 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.textarea {
+  width: 100%;
+  height: 35%;
+  border-radius: 30px;
+  padding: 30px;
+  resize: none;
+  outline: none;
+  font-size: 36px;
+}
+
+.keyboard {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  margin-top: 40px;
+  background-color: rgb(209, 239, 239);
+  border: 1px solid slategray;
+  padding: 5px;
+}
+
+.key {
+  width: 75px;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.key:active,
+.key-active {
+  border-radius: 35px;
+  background-color: rgb(129, 242, 199);
+}
+
+.Backspace {
+  width: 145px;
+}
+
+.Tab {
+  width: 110px;
+}
+
+.Backslash {
+  width: 110px;
+}
+
+.CapsLock {
+  width: 130px;
+}
+
+.Enter {
+  width: 170px;
+}
+
+.ShiftLeft {
+  width: 150px;
+}
+
+.ShiftRight {
+  width: 150px;
+}
+
+.ControlLeft {
+  width: 130px;
+}
+
+.AltLeft {
+  width: 95px;
+}
+
+.AltRight {
+  width: 95px;
+}
+
+.Space {
+  width: 450px;
+}
+
+.line1,
+.line2,
+.line3,
+.line4,
+.line5 {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  height: 75px;
+  margin-top: 5px;
+}
+
+.line1 {
+  margin-top: 0;
+}
+
+.MetaLeft {
+  padding: 15px;
+}
+
+.winImg {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
