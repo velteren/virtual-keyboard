@@ -56,6 +56,8 @@ const line2data = [{
   code: 'BracketRight', en: ']', enshift: '}', ru: 'ъ', rushift: 'Ъ',
 }, {
   code: 'Backslash', en: '\\', enshift: '|', ru: '\\', rushift: '/',
+}, {
+  code: 'Delete', en: 'DEL', enshift: 'DEL', ru: 'DEL', rushift: 'DEL',
 },
 ];
 const line3data = [{
