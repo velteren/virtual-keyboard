@@ -198,7 +198,6 @@ function renderKeyboard() {
   keyboard.append(line1, line2, line3, line4, line5);
   wrapper.append(textArea, keyboard, paragraph);
   document.body.append(wrapper);
-  textArea.focus();
 }
 
 renderKeyboard();
@@ -347,7 +346,10 @@ runOnKeys(
 
 runOnKeys(
   () => {
-    isTextSelected = true;
+    isTextSelected = !isTextSelected;
+    const textarea = document.querySelector('.textarea');
+    textarea.focus();
+    textarea.select();
   },
   2,
   'ControlLeft',
@@ -356,17 +358,24 @@ runOnKeys(
 
 document.addEventListener('keydown', (event) => {
   const textarea = document.querySelector('.textarea');
-  textarea.focus();
   const { code } = event;
+  if (!funcKeys.includes.code) {
+    event.preventDefault();
+  }
   const selStart = textarea.selectionStart;
   const selEnd = textarea.selectionEnd;
   console.log(`Начала и конец выделения: ${selStart} + ${selEnd}`);
-  textarea.setAttribute('autofocus', 'true');
   const elem = document.querySelector(`.${code}`);
   elem.classList.add('key-active');
   if (!funcKeys.includes(code) && code !== 'KeyA') {
-    textarea.textContent += elem.textContent;
-    caretPosition += 1;
+    if (isTextSelected) {
+      textarea.value = elem.textContent;
+      caretPosition = 1;
+      isTextSelected = !isTextSelected;
+    } else {
+      textarea.value += elem.textContent;
+      caretPosition += 1;
+    }
   }
   if (code === 'CapsLock') {
     isCaps = !isCaps;
@@ -391,20 +400,23 @@ document.addEventListener('keydown', (event) => {
   }
   if (code === 'KeyA') {
     if (!ctrl) {
-      textarea.textContent += elem.textContent;
+      textarea.value += elem.textContent;
       caretPosition += 1;
     }
   }
   if (code === 'Backspace') {
     if (isTextSelected) {
-      textarea.textContent = '';
+      textarea.value = '';
       caretPosition = 0;
-      textarea.setRangeText('', selStart, selEnd);
+      isTextSelected = false;
     } else {
-      textarea.textContent = textarea.textContent.slice(0, textarea.textContent.length - 1);
+      textarea.value = textarea.value.slice(0, textarea.value.length - 1);
       caretPosition -= 1;
       if (caretPosition < 0) caretPosition = 0;
     }
+  }
+  if (code === 'Enter') {
+    textarea.value += '\n';
   }
   console.log('caret:', caretPosition);
 });
@@ -425,7 +437,7 @@ document.addEventListener('keyup', (event) => {
 });
 
 window.addEventListener('click', (event) => {
-  const textarea = document.getElementById('textarea').focus();
+  //  const textarea = document.getElementById('textarea').focus();
   const { target } = event;
   console.log(target);
   if (target.classList.value === 'textarea') {
