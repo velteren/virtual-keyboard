@@ -36,6 +36,16 @@ html {
   background-color: rgb(209, 239, 239);
   border: 1px solid slategray;
   padding: 5px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.paragraph {
+  text-align: center;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .key {
@@ -56,8 +66,16 @@ html {
 
 .key:active,
 .key-active {
-  border-radius: 35px;
   background-color: rgb(129, 242, 199);
+  transition: 0.3s;
+  transform: translate(3px, 3px);
+}
+
+.selectNone {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .Backspace {

@@ -1,63 +1,63 @@
 const line1data = [{
-  code: 'Backquote', en: '`', enshift: '~', ru: 'ё', rushift: 'Ё',
+  code: 'Backquote', en: '`', enshift: '~', encaps: '`', ru: 'ё', rushift: 'Ё', rucaps: 'Ё',
 }, {
-  code: 'Digit1', en: '1', enshift: '!', ru: '1', rushift: '!',
+  code: 'Digit1', en: '1', enshift: '!', encaps: '', ru: '1', rushift: '!', rucaps: '',
 }, {
-  code: 'Digit2', en: '2', enshift: '@', ru: '2', rushift: '"',
+  code: 'Digit2', en: '2', enshift: '@', encaps: '', ru: '2', rushift: '"', rucaps: '',
 }, {
-  code: 'Digit3', en: '3', enshift: '#', ru: '3', rushift: '№',
+  code: 'Digit3', en: '3', enshift: '#', encaps: '', ru: '3', rushift: '№', rucaps: '',
 }, {
-  code: 'Digit4', en: '4', enshift: '$', ru: '4', rushift: ';',
+  code: 'Digit4', en: '4', enshift: '$', encaps: '', ru: '4', rushift: ';', rucaps: '',
 }, {
-  code: 'Digit5', en: '5', enshift: '%', ru: '5', rushift: '%',
+  code: 'Digit5', en: '5', enshift: '%', encaps: '', ru: '5', rushift: '%', rucaps: '',
 }, {
-  code: 'Digit6', en: '6', enshift: '^', ru: '6', rushift: ':',
+  code: 'Digit6', en: '6', enshift: '^', encaps: '', ru: '6', rushift: ':', rucaps: '',
 }, {
-  code: 'Digit7', en: '7', enshift: '&', ru: '7', rushift: '?',
+  code: 'Digit7', en: '7', enshift: '&', encaps: '', ru: '7', rushift: '?', rucaps: '',
 }, {
-  code: 'Digit8', en: '8', enshift: '*', ru: '8', rushift: '*',
+  code: 'Digit8', en: '8', enshift: '*', encaps: '', ru: '8', rushift: '*', rucaps: '',
 }, {
-  code: 'Digit9', en: '9', enshift: '(', ru: '9', rushift: '(',
+  code: 'Digit9', en: '9', enshift: '(', encaps: '', ru: '9', rushift: '(', rucaps: '',
 }, {
-  code: 'Digit0', en: '0', enshift: ')', ru: '0', rushift: ')',
+  code: 'Digit0', en: '0', enshift: ')', encaps: '', ru: '0', rushift: ')', rucaps: '',
 }, {
-  code: 'Minus', en: '-', enshift: '_', ru: '-', rushift: '_',
+  code: 'Minus', en: '-', enshift: '_', encaps: '', ru: '-', rushift: '_', rucaps: '',
 }, {
-  code: 'Equal', en: '=', enshift: '+', ru: '=', rushift: '+',
+  code: 'Equal', en: '=', enshift: '+', encaps: '', ru: '=', rushift: '+', rucaps: '',
 }, {
-  code: 'Backspace', en: 'BACKSPACE', enshift: 'BACKSPACE', ru: 'BACKSPACE', rushift: 'BACKSPACE',
+  code: 'Backspace', en: 'BACKSPACE', enshift: 'BACKSPACE', encaps: 'BACKSPACE', ru: 'BACKSPACE', rushift: 'BACKSPACE', rucaps: 'BACKSPACE',
 },
 ];
 const line2data = [{
-  code: 'Tab', en: 'TAB', enshift: 'TAB', ru: 'TAB', rushift: 'TAB',
+  code: 'Tab', en: 'TAB', enshift: 'TAB', encaps: 'TAB', ru: 'TAB', rushift: 'TAB', rucaps: 'TAB',
 }, {
-  code: 'KeyQ', en: 'q', enshift: 'Q', ru: 'й', rushift: 'Й',
+  code: 'KeyQ', en: 'q', enshift: 'Q', encaps: 'Q', ru: 'й', rushift: 'Й', rucaps: '',
 }, {
-  code: 'KeyW', en: 'w', enshift: 'W', ru: 'ц', rushift: 'Ц',
+  code: 'KeyW', en: 'w', enshift: 'W', encaps: 'W', ru: 'ц', rushift: 'Ц', rucaps: '',
 }, {
-  code: 'KeyE', en: 'e', enshift: 'E', ru: 'у', rushift: 'У',
+  code: 'KeyE', en: 'e', enshift: 'E', encaps: 'E', ru: 'у', rushift: 'У', rucaps: '',
 }, {
-  code: 'KeyR', en: 'r', enshift: 'R', ru: 'к', rushift: 'К',
+  code: 'KeyR', en: 'r', enshift: 'R', encaps: 'R', ru: 'к', rushift: 'К', rucaps: '',
 }, {
-  code: 'KeyT', en: 't', enshift: 'T', ru: 'е', rushift: 'Е',
+  code: 'KeyT', en: 't', enshift: 'T', encaps: 'T', ru: 'е', rushift: 'Е', rucaps: '',
 }, {
-  code: 'KeyY', en: 'y', enshift: 'Y', ru: 'н', rushift: 'Н',
+  code: 'KeyY', en: 'y', enshift: 'Y', encaps: 'Y', ru: 'н', rushift: 'Н', rucaps: '',
 }, {
-  code: 'KeyU', en: 'u', enshift: 'U', ru: 'г', rushift: 'Г',
+  code: 'KeyU', en: 'u', enshift: 'U', encaps: 'U', ru: 'г', rushift: 'Г', rucaps: '',
 }, {
-  code: 'KeyI', en: 'i', enshift: 'I', ru: 'ш', rushift: 'Ш',
+  code: 'KeyI', en: 'i', enshift: 'I', encaps: 'I', ru: 'ш', rushift: 'Ш', rucaps: '',
 }, {
-  code: 'KeyO', en: 'o', enshift: 'O', ru: 'щ', rushift: 'Щ',
+  code: 'KeyO', en: 'o', enshift: 'O', encaps: 'O', ru: 'щ', rushift: 'Щ', rucaps: '',
 }, {
-  code: 'KeyP', en: 'p', enshift: 'P', ru: 'з', rushift: 'З',
+  code: 'KeyP', en: 'p', enshift: 'P', encaps: 'P', ru: 'з', rushift: 'З', rucaps: '',
 }, {
-  code: 'BracketLeft', en: '[', enshift: '{', ru: 'х', rushift: 'Х',
+  code: 'BracketLeft', en: '[', enshift: '{', encaps: '', ru: 'х', rushift: 'Х', rucaps: '',
 }, {
-  code: 'BracketRight', en: ']', enshift: '}', ru: 'ъ', rushift: 'Ъ',
+  code: 'BracketRight', en: ']', enshift: '}', encaps: '', ru: 'ъ', rushift: 'Ъ', rucaps: '',
 }, {
-  code: 'Backslash', en: '\\', enshift: '|', ru: '\\', rushift: '/',
+  code: 'Backslash', en: '\\', enshift: '|', encaps: '', ru: '\\', rushift: '/', rucaps: '',
 }, {
-  code: 'Delete', en: 'DEL', enshift: 'DEL', ru: 'DEL', rushift: 'DEL',
+  code: 'Delete', en: 'DEL', enshift: 'DEL', encaps: '', ru: 'DEL', rushift: 'DEL', rucaps: '',
 },
 ];
 const line3data = [{
@@ -137,9 +137,15 @@ const line5data = [{
 },
 ];
 
+const funcKeys = ['ControlLeft', 'ControlRight', 'Tab', 'Backspace', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'AltLeft', 'AltRight', 'Space'];
+
 if (!localStorage.getItem('language')) localStorage.setItem('language', 'en');
+
 let isCaps = false;
 let isShift = false;
+let ctrl = false;
+let caretPosition = 0;
+let isTextSelected = false;
 
 function createElem(className, tagName = 'div') {
   const elem = document.createElement(tagName);
@@ -160,6 +166,9 @@ function createKey(obj) {
 function renderKeyboard() {
   const wrapper = createElem('wrapper');
   const textArea = createElem('textarea', 'textarea');
+  textArea.setAttribute('id', 'textarea');
+  const paragraph = createElem('paragraph', 'p');
+  paragraph.innerHTML = 'Клавиатура создана в операционной системе Windows. <br> Нажмите Left SHIFT + Left ALT для смены языка';
   const keyboard = createElem('keyboard');
   const line1 = createElem('line1');
   line1data.forEach((item) => {
@@ -187,24 +196,25 @@ function renderKeyboard() {
     line5.append(key);
   });
   keyboard.append(line1, line2, line3, line4, line5);
-  wrapper.append(textArea, keyboard);
+  wrapper.append(textArea, keyboard, paragraph);
   document.body.append(wrapper);
+  textArea.focus();
 }
 
 renderKeyboard();
 
-//const TAB = document.querySelector('.Tab');
-//const CAPS = document.querySelector('.CapsLock');
-//const LSHIFT = document.querySelector('.ShiftLeft');
-//const LCTRL = document.querySelector('.ControlLeft');
-//const WIN = document.querySelector('.MetaLeft');
-//const LALT = document.querySelector('.AltLeft');
-//const SPACE = document.querySelector('.Space');
-//const BACKSPACE = document.querySelector('.Backspace');
-//const ENTER = document.querySelector('.Enter');
-//const RSHIFT = document.querySelector('.ShiftRight');
-//const RCTRL = document.querySelector('.ControlRight');
-//const RALT = document.querySelector('.AltRight');
+//  const TAB = document.querySelector('.Tab');
+//  const CAPS = document.querySelector('.CapsLock');
+//  const LSHIFT = document.querySelector('.ShiftLeft');
+//  const LCTRL = document.querySelector('.ControlLeft');
+//  const WIN = document.querySelector('.MetaLeft');
+//  const LALT = document.querySelector('.AltLeft');
+//  const SPACE = document.querySelector('.Space');
+//  const BACKSPACE = document.querySelector('.Backspace');
+//  const ENTER = document.querySelector('.Enter');
+//  const RSHIFT = document.querySelector('.ShiftRight');
+//  const RCTRL = document.querySelector('.ControlRight');
+//  const RALT = document.querySelector('.AltRight');
 
 function renderKeys() {
   function winKey() {
@@ -284,6 +294,23 @@ function renderKeys() {
       tmp.textContent = obj.ru;
     }
   });
+  const keyz = document.querySelectorAll('.key');
+  if (isCaps && !isShift) {
+    console.log(keyz);
+    keyz.forEach(z => {
+      z.textContent = z.textContent.toUpperCase();
+    });
+  }
+  if (isShift && lang === 'ru') {
+    keyz.forEach(z => {
+      z.textContent = z.dataset.rushift;
+    });
+  }
+  if (isShift && lang === 'en') {
+    keyz.forEach(z => {
+      z.textContent = z.dataset.enshift;
+    });
+  }
   winKey();
 }
 
@@ -318,14 +345,103 @@ runOnKeys(
   'AltLeft',
 );
 
+runOnKeys(
+  () => {
+    isTextSelected = true;
+  },
+  2,
+  'ControlLeft',
+  'KeyA',
+);
+
 document.addEventListener('keydown', (event) => {
+  const textarea = document.querySelector('.textarea');
+  textarea.focus();
   const { code } = event;
+  const selStart = textarea.selectionStart;
+  const selEnd = textarea.selectionEnd;
+  console.log(`Начала и конец выделения: ${selStart} + ${selEnd}`);
+  textarea.setAttribute('autofocus', 'true');
   const elem = document.querySelector(`.${code}`);
   elem.classList.add('key-active');
+  if (!funcKeys.includes(code) && code !== 'KeyA') {
+    textarea.textContent += elem.textContent;
+    caretPosition += 1;
+  }
+  if (code === 'CapsLock') {
+    isCaps = !isCaps;
+    if (isCaps) {
+      document.querySelector('.CapsLock').classList.add('key-active');
+    } else {
+      document.querySelector('.CapsLock').classList.remove('key-active');
+    }
+    renderKeys();
+  }
+  if (code === 'ShiftLeft' || code === 'ShiftRight') {
+    isShift = true;
+    renderKeys();
+  }
+  if (code === 'Tab') {
+    event.preventDefault();
+    textarea.textContent += '  ';
+    caretPosition += 2;
+  }
+  if (code === 'ControlLeft') {
+    ctrl = true;
+  }
+  if (code === 'KeyA') {
+    if (!ctrl) {
+      textarea.textContent += elem.textContent;
+      caretPosition += 1;
+    }
+  }
+  if (code === 'Backspace') {
+    if (isTextSelected) {
+      textarea.textContent = '';
+      caretPosition = 0;
+      textarea.setRangeText('', selStart, selEnd);
+    } else {
+      textarea.textContent = textarea.textContent.slice(0, textarea.textContent.length - 1);
+      caretPosition -= 1;
+      if (caretPosition < 0) caretPosition = 0;
+    }
+  }
+  console.log('caret:', caretPosition);
 });
 
 document.addEventListener('keyup', (event) => {
   const { code } = event;
   const elem = document.querySelector(`.${code}`);
-  elem.classList.remove('key-active');
+  if (code !== 'CapsLock') {
+    elem.classList.remove('key-active');
+  }
+  if (code === 'ControlLeft') {
+    ctrl = false;
+  }
+  if (code === 'ShiftLeft' || code === 'ShiftRight') {
+    isShift = false;
+    renderKeys();
+  }
+});
+
+window.addEventListener('click', (event) => {
+  const textarea = document.getElementById('textarea').focus();
+  const { target } = event;
+  console.log(target);
+  if (target.classList.value === 'textarea') {
+    caretPosition = target.selectionStart;
+    console.log('Caret position: ', caretPosition);
+  }
+  if (target.classList.item(0) === 'CapsLock') {
+    renderKeys();
+    isCaps = !isCaps;
+    target.classList.toggle('key-active');
+    console.log('isCaps: ', isCaps);
+  }
+  if (target.classList.item(0) === 'ShiftLeft') {
+    renderKeys();
+    isShift = !isShift;
+    target.classList.toggle('key-active');
+    console.log('isShift: ', isShift);
+  }
 });
