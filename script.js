@@ -498,7 +498,7 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-window.addEventListener('click', (event) => {
+document.querySelector('.keyboard').addEventListener('click', (event) => {
   const textarea = document.getElementById('textarea');
   textarea.focus();
   const { target } = event;
