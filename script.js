@@ -450,6 +450,9 @@ window.addEventListener('click', (event) => {
   if (target.classList.item(0) === 'Space') {
     textarea.value += ' ';
   }
+  if (target.classList.item(0) === 'Enter') {
+    textarea.value += '\n';
+  }
   if (target.classList.item(0) === 'Backspace') {
     if (isTextSelected) {
       textarea.value = '';
@@ -467,5 +470,16 @@ window.addEventListener('click', (event) => {
     isShift = !isShift;
     renderKeys();
     target.classList.toggle('key-active');
+  }
+  if (target.classList.item(0) === 'AltLeft' && isShift && document.querySelector('.ShiftLeft').classList.item(2) === 'key-active') {
+    console.log(document.querySelector('.ShiftLeft').classList);
+    if (localStorage.getItem('language') === 'en') {
+      localStorage.setItem('language', 'ru');
+    } else {
+      localStorage.setItem('language', 'en');
+    }
+    isShift = !isShift;
+    document.querySelector('.ShiftLeft').classList.remove('key-active');
+    renderKeys();
   }
 });
