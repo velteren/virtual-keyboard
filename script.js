@@ -205,7 +205,7 @@ function renderKeys() {
   function winKey() {
     const win = document.querySelector('.MetaLeft');
     const winImg = createElem('winImg', 'img');
-    winImg.src = '/assets/windows.png';
+    winImg.src = './assets/windows.png';
     win.append(winImg);
   }
   const lang = localStorage.getItem('language');
