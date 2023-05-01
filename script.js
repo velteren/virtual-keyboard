@@ -144,6 +144,7 @@ let ctrl = false;
 let isTextSelected = false;
 
 if (!localStorage.getItem('language')) localStorage.setItem('language', 'en');
+if (!localStorage.getItem('clipboard')) localStorage.setItem('clipboard', '');
 
 function createElem(className, tagName = 'div') {
   const elem = document.createElement(tagName);
@@ -361,6 +362,48 @@ runOnKeys(
   'KeyA',
 );
 
+runOnKeys(
+  () => {
+    const textarea = document.querySelector('.textarea');
+    if (isTextSelected) {
+      navigator.clipboard.writeText(`${textarea.value}`);
+      localStorage.setItem('clipboard', `${textarea.value}`);
+    }
+  },
+  2,
+  'ControlLeft',
+  'KeyC',
+);
+
+runOnKeys(
+  () => {
+    const textarea = document.querySelector('.textarea');
+    if (isTextSelected) {
+      textarea.value = localStorage.getItem('clipboard');
+    } else {
+      textarea.value += localStorage.getItem('clipboard');
+    }
+  },
+  2,
+  'ControlLeft',
+  'KeyV',
+);
+
+runOnKeys(
+  () => {
+    const textarea = document.querySelector('.textarea');
+    if (isTextSelected) {
+      localStorage.setItem('clipboard', `${textarea.value}`);
+      navigator.clipboard.writeText(`${textarea.value}`);
+      textarea.value = '';
+      isTextSelected = !isTextSelected;
+    }
+  },
+  2,
+  'ControlLeft',
+  'KeyX',
+);
+
 document.addEventListener('keydown', (event) => {
   const textarea = document.querySelector('.textarea');
   textarea.focus();
@@ -370,7 +413,7 @@ document.addEventListener('keydown', (event) => {
   }
   const elem = document.querySelector(`.${code}`);
   elem.classList.add('key-active');
-  if (!funcKeys.includes(code) && code !== 'KeyA') {
+  if (!funcKeys.includes(code) && code !== 'KeyA' && code !== 'KeyC' && code !== 'KeyV' && code !== 'KeyX') {
     if (isTextSelected) {
       textarea.value = elem.textContent;
       isTextSelected = !isTextSelected;
@@ -402,7 +445,38 @@ document.addEventListener('keydown', (event) => {
     ctrl = true;
   }
   if (code === 'KeyA') {
-    if (!ctrl) {
+    if (isTextSelected) {
+      if (!ctrl) {
+        textarea.value = elem.textContent;
+      }
+    } else if (!ctrl) {
+      textarea.value += elem.textContent;
+    }
+  }
+  if (code === 'KeyC') {
+    if (isTextSelected) {
+      if (!ctrl) {
+        textarea.value = elem.textContent;
+      }
+    } else if (!ctrl) {
+      textarea.value += elem.textContent;
+    }
+  }
+  if (code === 'KeyV') {
+    if (isTextSelected) {
+      if (!ctrl) {
+        textarea.value = elem.textContent;
+      }
+    } else if (!ctrl) {
+      textarea.value += elem.textContent;
+    }
+  }
+  if (code === 'KeyX') {
+    if (isTextSelected) {
+      if (!ctrl) {
+        textarea.value = elem.textContent;
+      }
+    } else if (!ctrl) {
       textarea.value += elem.textContent;
     }
   }
