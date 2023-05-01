@@ -281,24 +281,28 @@ function renderKeys() {
   });
   const keyz = document.querySelectorAll('.key');
   if (isCaps && !isShift) {
-    keyz.forEach((z) => {
-      z.textContent = z.textContent.toUpperCase();
+    keyz.forEach((item) => {
+      const key = item;
+      key.textContent = key.textContent.toUpperCase();
     });
   }
   if (isShift && lang === 'ru') {
-    keyz.forEach((z) => {
-      z.textContent = z.dataset.rushift;
+    keyz.forEach((item) => {
+      const key = item;
+      key.textContent = key.dataset.rushift;
     });
   }
   if (isShift && lang === 'en') {
-    keyz.forEach((z) => {
-      z.textContent = z.dataset.enshift;
+    keyz.forEach((item) => {
+      const key = item;
+      key.textContent = key.dataset.enshift;
     });
   }
   if (isCaps && isShift) {
-    keyz.forEach((z) => {
-      if (!funcKeys.includes(z.classList[0])) {
-        z.textContent = z.textContent.toLowerCase();
+    keyz.forEach((item) => {
+      if (!funcKeys.includes(item.classList[0])) {
+        const key = item;
+        key.textContent = key.textContent.toLowerCase();
       }
     });
   }
