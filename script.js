@@ -1,61 +1,61 @@
 const line1data = [{
-  code: 'Backquote', en: '`', enshift: '~', encaps: '`', ru: 'ё', rushift: 'Ё', rucaps: 'Ё',
+  code: 'Backquote', en: '`', enshift: '~', ru: 'ё', rushift: 'Ё',
 }, {
-  code: 'Digit1', en: '1', enshift: '!', encaps: '', ru: '1', rushift: '!', rucaps: '',
+  code: 'Digit1', en: '1', enshift: '!', ru: '1', rushift: '!',
 }, {
-  code: 'Digit2', en: '2', enshift: '@', encaps: '', ru: '2', rushift: '"', rucaps: '',
+  code: 'Digit2', en: '2', enshift: '@', ru: '2', rushift: '"',
 }, {
-  code: 'Digit3', en: '3', enshift: '#', encaps: '', ru: '3', rushift: '№', rucaps: '',
+  code: 'Digit3', en: '3', enshift: '#', ru: '3', rushift: '№',
 }, {
-  code: 'Digit4', en: '4', enshift: '$', encaps: '', ru: '4', rushift: ';', rucaps: '',
+  code: 'Digit4', en: '4', enshift: '$', ru: '4', rushift: ';',
 }, {
-  code: 'Digit5', en: '5', enshift: '%', encaps: '', ru: '5', rushift: '%', rucaps: '',
+  code: 'Digit5', en: '5', enshift: '%', ru: '5', rushift: '%',
 }, {
-  code: 'Digit6', en: '6', enshift: '^', encaps: '', ru: '6', rushift: ':', rucaps: '',
+  code: 'Digit6', en: '6', enshift: '^', ru: '6', rushift: ':',
 }, {
-  code: 'Digit7', en: '7', enshift: '&', encaps: '', ru: '7', rushift: '?', rucaps: '',
+  code: 'Digit7', en: '7', enshift: '&', ru: '7', rushift: '?',
 }, {
-  code: 'Digit8', en: '8', enshift: '*', encaps: '', ru: '8', rushift: '*', rucaps: '',
+  code: 'Digit8', en: '8', enshift: '*', ru: '8', rushift: '*',
 }, {
-  code: 'Digit9', en: '9', enshift: '(', encaps: '', ru: '9', rushift: '(', rucaps: '',
+  code: 'Digit9', en: '9', enshift: '(', ru: '9', rushift: '(',
 }, {
-  code: 'Digit0', en: '0', enshift: ')', encaps: '', ru: '0', rushift: ')', rucaps: '',
+  code: 'Digit0', en: '0', enshift: ')', ru: '0', rushift: ')',
 }, {
-  code: 'Minus', en: '-', enshift: '_', encaps: '', ru: '-', rushift: '_', rucaps: '',
+  code: 'Minus', en: '-', enshift: '_', ru: '-', rushift: '_',
 }, {
-  code: 'Equal', en: '=', enshift: '+', encaps: '', ru: '=', rushift: '+', rucaps: '',
+  code: 'Equal', en: '=', enshift: '+', ru: '=', rushift: '+',
 }, {
-  code: 'Backspace', en: 'BACKSPACE', enshift: 'BACKSPACE', encaps: 'BACKSPACE', ru: 'BACKSPACE', rushift: 'BACKSPACE', rucaps: 'BACKSPACE',
+  code: 'Backspace', en: 'BACKSPACE', enshift: 'BACKSPACE', ru: 'BACKSPACE', rushift: 'BACKSPACE',
 },
 ];
 const line2data = [{
-  code: 'Tab', en: 'TAB', enshift: 'TAB', encaps: 'TAB', ru: 'TAB', rushift: 'TAB', rucaps: 'TAB',
+  code: 'Tab', en: 'TAB', enshift: 'TAB', ru: 'TAB', rushift: 'TAB',
 }, {
-  code: 'KeyQ', en: 'q', enshift: 'Q', encaps: 'Q', ru: 'й', rushift: 'Й', rucaps: '',
+  code: 'KeyQ', en: 'q', enshift: 'Q', ru: 'й', rushift: 'Й',
 }, {
-  code: 'KeyW', en: 'w', enshift: 'W', encaps: 'W', ru: 'ц', rushift: 'Ц', rucaps: '',
+  code: 'KeyW', en: 'w', enshift: 'W', ru: 'ц', rushift: 'Ц',
 }, {
-  code: 'KeyE', en: 'e', enshift: 'E', encaps: 'E', ru: 'у', rushift: 'У', rucaps: '',
+  code: 'KeyE', en: 'e', enshift: 'E', ru: 'у', rushift: 'У',
 }, {
-  code: 'KeyR', en: 'r', enshift: 'R', encaps: 'R', ru: 'к', rushift: 'К', rucaps: '',
+  code: 'KeyR', en: 'r', enshift: 'R', ru: 'к', rushift: 'К',
 }, {
-  code: 'KeyT', en: 't', enshift: 'T', encaps: 'T', ru: 'е', rushift: 'Е', rucaps: '',
+  code: 'KeyT', en: 't', enshift: 'T', ru: 'е', rushift: 'Е',
 }, {
-  code: 'KeyY', en: 'y', enshift: 'Y', encaps: 'Y', ru: 'н', rushift: 'Н', rucaps: '',
+  code: 'KeyY', en: 'y', enshift: 'Y', ru: 'н', rushift: 'Н',
 }, {
-  code: 'KeyU', en: 'u', enshift: 'U', encaps: 'U', ru: 'г', rushift: 'Г', rucaps: '',
+  code: 'KeyU', en: 'u', enshift: 'U', ru: 'г', rushift: 'Г',
 }, {
-  code: 'KeyI', en: 'i', enshift: 'I', encaps: 'I', ru: 'ш', rushift: 'Ш', rucaps: '',
+  code: 'KeyI', en: 'i', enshift: 'I', ru: 'ш', rushift: 'Ш',
 }, {
-  code: 'KeyO', en: 'o', enshift: 'O', encaps: 'O', ru: 'щ', rushift: 'Щ', rucaps: '',
+  code: 'KeyO', en: 'o', enshift: 'O', ru: 'щ', rushift: 'Щ',
 }, {
-  code: 'KeyP', en: 'p', enshift: 'P', encaps: 'P', ru: 'з', rushift: 'З', rucaps: '',
+  code: 'KeyP', en: 'p', enshift: 'P', ru: 'з', rushift: 'З',
 }, {
-  code: 'BracketLeft', en: '[', enshift: '{', encaps: '', ru: 'х', rushift: 'Х', rucaps: '',
+  code: 'BracketLeft', en: '[', enshift: '{', ru: 'х', rushift: 'Х',
 }, {
-  code: 'BracketRight', en: ']', enshift: '}', encaps: '', ru: 'ъ', rushift: 'Ъ', rucaps: '',
+  code: 'BracketRight', en: ']', enshift: '}', ru: 'ъ', rushift: 'Ъ',
 }, {
-  code: 'Backslash', en: '\\', enshift: '|', encaps: '', ru: '\\', rushift: '/', rucaps: '',
+  code: 'Backslash', en: '\\', enshift: '|', ru: '\\', rushift: '/',
 },
 ];
 const line3data = [{
@@ -201,19 +201,6 @@ function renderKeyboard() {
 
 renderKeyboard();
 
-//  const TAB = document.querySelector('.Tab');
-//  const CAPS = document.querySelector('.CapsLock');
-//  const LSHIFT = document.querySelector('.ShiftLeft');
-//  const LCTRL = document.querySelector('.ControlLeft');
-//  const WIN = document.querySelector('.MetaLeft');
-//  const LALT = document.querySelector('.AltLeft');
-//  const SPACE = document.querySelector('.Space');
-//  const BACKSPACE = document.querySelector('.Backspace');
-//  const ENTER = document.querySelector('.Enter');
-//  const RSHIFT = document.querySelector('.ShiftRight');
-//  const RCTRL = document.querySelector('.ControlRight');
-//  const RALT = document.querySelector('.AltRight');
-
 function renderKeys() {
   function winKey() {
     const win = document.querySelector('.MetaLeft');
@@ -294,23 +281,22 @@ function renderKeys() {
   });
   const keyz = document.querySelectorAll('.key');
   if (isCaps && !isShift) {
-    console.log(keyz);
-    keyz.forEach(z => {
+    keyz.forEach((z) => {
       z.textContent = z.textContent.toUpperCase();
     });
   }
   if (isShift && lang === 'ru') {
-    keyz.forEach(z => {
+    keyz.forEach((z) => {
       z.textContent = z.dataset.rushift;
     });
   }
   if (isShift && lang === 'en') {
-    keyz.forEach(z => {
+    keyz.forEach((z) => {
       z.textContent = z.dataset.enshift;
     });
   }
   if (isCaps && isShift) {
-    keyz.forEach(z => {
+    keyz.forEach((z) => {
       if (!funcKeys.includes(z.classList[0])) {
         z.textContent = z.textContent.toLowerCase();
       }
@@ -546,7 +532,6 @@ window.addEventListener('click', (event) => {
     target.classList.toggle('key-active');
   }
   if (target.classList.item(0) === 'AltLeft' && isShift && document.querySelector('.ShiftLeft').classList.item(2) === 'key-active') {
-    console.log(document.querySelector('.ShiftLeft').classList);
     if (localStorage.getItem('language') === 'en') {
       localStorage.setItem('language', 'ru');
     } else {
