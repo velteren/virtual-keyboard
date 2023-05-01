@@ -507,6 +507,12 @@ document.querySelector('.keyboard').addEventListener('click', (event) => {
   }
   if (!funcKeys.includes(target.classList.item(0))) {
     textarea.value += target.textContent;
+    if (isShift) {
+      isShift = !isShift;
+      renderKeys();
+      document.querySelector('.ShiftLeft').classList.remove('key-active');
+      document.querySelector('.ShiftRight').classList.remove('key-active');
+    }
   }
   if (target.classList.item(0) === 'Tab') {
     textarea.value += '  ';
