@@ -56,8 +56,6 @@ const line2data = [{
   code: 'BracketRight', en: ']', enshift: '}', encaps: '', ru: 'ъ', rushift: 'Ъ', rucaps: '',
 }, {
   code: 'Backslash', en: '\\', enshift: '|', encaps: '', ru: '\\', rushift: '/', rucaps: '',
-}, {
-  code: 'Delete', en: 'DEL', enshift: 'DEL', encaps: '', ru: 'DEL', rushift: 'DEL', rucaps: '',
 },
 ];
 const line3data = [{
@@ -138,14 +136,14 @@ const line5data = [{
 ];
 
 const funcKeys = ['ControlLeft', 'ControlRight', 'Tab', 'Backspace', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'AltLeft', 'AltRight', 'Space'];
-
-if (!localStorage.getItem('language')) localStorage.setItem('language', 'en');
+const wrongClicks = ['line1', 'line2', 'line3', 'line4', 'line5', 'keyboard'];
 
 let isCaps = false;
 let isShift = false;
 let ctrl = false;
-let caretPosition = 0;
 let isTextSelected = false;
+
+if (!localStorage.getItem('language')) localStorage.setItem('language', 'en');
 
 function createElem(className, tagName = 'div') {
   const elem = document.createElement(tagName);
@@ -310,6 +308,13 @@ function renderKeys() {
       z.textContent = z.dataset.enshift;
     });
   }
+  if (isCaps && isShift) {
+    keyz.forEach(z => {
+      if (!funcKeys.includes(z.classList[0])) {
+        z.textContent = z.textContent.toLowerCase();
+      }
+    });
+  }
   winKey();
 }
 
@@ -358,24 +363,23 @@ runOnKeys(
 
 document.addEventListener('keydown', (event) => {
   const textarea = document.querySelector('.textarea');
+  textarea.focus();
   const { code } = event;
   if (!funcKeys.includes.code) {
     event.preventDefault();
   }
-  const selStart = textarea.selectionStart;
-  const selEnd = textarea.selectionEnd;
-  console.log(`Начала и конец выделения: ${selStart} + ${selEnd}`);
   const elem = document.querySelector(`.${code}`);
   elem.classList.add('key-active');
   if (!funcKeys.includes(code) && code !== 'KeyA') {
     if (isTextSelected) {
       textarea.value = elem.textContent;
-      caretPosition = 1;
       isTextSelected = !isTextSelected;
     } else {
       textarea.value += elem.textContent;
-      caretPosition += 1;
     }
+  }
+  if (code === 'Space') {
+    textarea.value += ' ';
   }
   if (code === 'CapsLock') {
     isCaps = !isCaps;
@@ -393,7 +397,6 @@ document.addEventListener('keydown', (event) => {
   if (code === 'Tab') {
     event.preventDefault();
     textarea.textContent += '  ';
-    caretPosition += 2;
   }
   if (code === 'ControlLeft') {
     ctrl = true;
@@ -401,24 +404,19 @@ document.addEventListener('keydown', (event) => {
   if (code === 'KeyA') {
     if (!ctrl) {
       textarea.value += elem.textContent;
-      caretPosition += 1;
     }
   }
   if (code === 'Backspace') {
     if (isTextSelected) {
       textarea.value = '';
-      caretPosition = 0;
       isTextSelected = false;
     } else {
       textarea.value = textarea.value.slice(0, textarea.value.length - 1);
-      caretPosition -= 1;
-      if (caretPosition < 0) caretPosition = 0;
     }
   }
   if (code === 'Enter') {
     textarea.value += '\n';
   }
-  console.log('caret:', caretPosition);
 });
 
 document.addEventListener('keyup', (event) => {
@@ -437,23 +435,37 @@ document.addEventListener('keyup', (event) => {
 });
 
 window.addEventListener('click', (event) => {
-  //  const textarea = document.getElementById('textarea').focus();
+  const textarea = document.getElementById('textarea');
+  textarea.focus();
   const { target } = event;
-  console.log(target);
-  if (target.classList.value === 'textarea') {
-    caretPosition = target.selectionStart;
-    console.log('Caret position: ', caretPosition);
+  if (wrongClicks.includes(target.classList.item(0))) {
+    return;
+  }
+  if (!funcKeys.includes(target.classList.item(0))) {
+    textarea.value += target.textContent;
+  }
+  if (target.classList.item(0) === 'Tab') {
+    textarea.value += '  ';
+  }
+  if (target.classList.item(0) === 'Space') {
+    textarea.value += ' ';
+  }
+  if (target.classList.item(0) === 'Backspace') {
+    if (isTextSelected) {
+      textarea.value = '';
+      isTextSelected = false;
+    } else {
+      textarea.value = textarea.value.slice(0, textarea.value.length - 1);
+    }
   }
   if (target.classList.item(0) === 'CapsLock') {
-    renderKeys();
     isCaps = !isCaps;
-    target.classList.toggle('key-active');
-    console.log('isCaps: ', isCaps);
-  }
-  if (target.classList.item(0) === 'ShiftLeft') {
     renderKeys();
-    isShift = !isShift;
     target.classList.toggle('key-active');
-    console.log('isShift: ', isShift);
+  }
+  if (target.classList.item(0) === 'ShiftLeft' || target.classList.item(0) === 'ShiftRight') {
+    isShift = !isShift;
+    renderKeys();
+    target.classList.toggle('key-active');
   }
 });
